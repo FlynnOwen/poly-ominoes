@@ -1,6 +1,6 @@
 <h1 align="center"> poly-ominoes </h1>
 
-<h1 align="center"> Usage: <h1>
+<h1 align="center"> Usage: </h1>
 
 To run the code: first, clone the repository, move into the code folder, and then run main.py
 
@@ -16,7 +16,7 @@ python3 main.py
 
 <h1 align="center"> Methods </h1>
 
-<h2 align="center"> Overview <h2>
+<h2 align="center"> Overview </h2>
 
 I have decided to use a recursive solution. Given all one-sided polyominoes of order n - 1, we can construct all one-sided polyominoes of order n. We do this by keeping a unique cache (a set, initialised as empty) of all one-sided polyominoes of order n, and for each polyomino of order n-1, we add a single tile in any free adjacent position to each existing tile. We then rotate this new one-sided polyomino by 90 degrees anti-clockwise and check it against our cache. If it is in the cache, we un-rotate the polyomino and move onto placing a different tile. If it isn't in the cache, we repeat this process until we have rotated it a full 360 degrees. If none of the rotations of this polyomino are in the cache, it is added to the cache. 
 
