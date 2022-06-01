@@ -32,7 +32,7 @@ This is then repeated for each possible free, adjacent tile, for each one-sided 
 We can view a one-sided polyomino as a tiling within a discrete space. 
 
 
-In this code, divide this space up into 4 qudrants, with x values increasing when moving right across this space, and y values increasing as we move down this space. 
+In this code, divide this space up into 4 qudrants (i.e our metric space is that of the integers), with x values increasing when moving right across this space, and y values increasing as we move down this space. 
 
 We enforce that a polyomino is in the most top, left possible place in this bottom right quadrant (e.g, it's furthest left tile will be at location x=0 and it's top tile will be at location y=0. Given this poly-omino, we can place a tile at any point adjacent to where any of it's current tiles sit. If it happens that the placed tile is in another quadrant (e.g it's x or y value is negative) the poly-omino is translated to be in it's enforced position (as top-left as possible in this bottom-rght quadrant).
 
