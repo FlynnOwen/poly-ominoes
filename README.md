@@ -14,7 +14,7 @@ python3 main.py
 2. You will then be asked if you'd like to print all polyominoes of this order (y/N)
 
 
-<h1 style="text-align: center;"> Methods </h1>
+<h1 align="center"> Methods </h1>
 
 ### Overview
 
