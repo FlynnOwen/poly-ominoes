@@ -15,6 +15,7 @@ python3 main.py
 1. You will be prompted for the order of polyomino (N) - this must be an integer value
 2. You will then be asked if you'd like to print all polyominoes of this order (y/N)
 
+This will return the number of one-sided poly-ominoes of order N, and then conditionally print them.
 
 <h1 align="center"> Methods </h1>
 
