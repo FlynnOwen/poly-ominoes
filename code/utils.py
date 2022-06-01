@@ -1,3 +1,7 @@
+"""
+Utility functions related to rotating and translating polyominoes
+"""
+
 import copy
 
 

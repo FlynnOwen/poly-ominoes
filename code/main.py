@@ -1,3 +1,9 @@
+"""
+Main function for generating polyominoes
+
+Given options, the user can specify the order of poly-omino they would like to generate up to
+and whether they would like to print all poly-ominoes of that order.
+"""
 import copy
 
 from utils import check_add_tile
