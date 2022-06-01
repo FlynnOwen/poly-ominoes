@@ -22,13 +22,13 @@ def generate_poly_ominoes(n):
                 # Add a tile left of current tile
                 check_add_tile([tile[0] - 1, tile[1]], curr_poly_omino, curr_poly_ominoes)
 
-                # Add a tile left of current tile
+                # Add a tile down of current tile
                 check_add_tile([tile[0], tile[1] - 1], curr_poly_omino, curr_poly_ominoes)
 
-                # Add a tile left of current tile
+                # Add a tile right of current tile
                 check_add_tile([tile[0] + 1, tile[1]], curr_poly_omino, curr_poly_ominoes)
 
-                # Add a tile left of current tile
+                # Add a tile up of current tile
                 check_add_tile([tile[0], tile[1] + 1], curr_poly_omino, curr_poly_ominoes)
 
         yield current_poly_ominoes
