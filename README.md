@@ -39,6 +39,8 @@ Each time we place a tile, we rotate the polyomino 90 degrees anti clockwise in 
 The combination of rotating 90 degrees anti-clockwise along the y-axis and translating downwards to the enforced position acts as an 'on the spot' 90 degree rotation.
 
 <h2 align="center"> Memory and speed optimizations </h2>
+
 By using a generator to keep track of all polyominoes of order n - 1 (used to calulate polyominoes of order n) we reduce memory by storing all polyominoes of order 1 -> n-1. Also by keeping a hashset of all current one-sided polyominoes of order n and not caching all possible translations / rotations of any given free-polyomino of order n, we are minimizing memory consumption.
+
 
 We could parallelize this algorithm reasonably easily. By viewing the hashset of polyominoes of order n as a global (shared state / mutex) variable, we could compute all tile placements / rotations / translations given polyominoes of order n-1 in parallel. 
