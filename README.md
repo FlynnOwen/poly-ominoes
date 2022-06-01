@@ -1,4 +1,5 @@
 <h1 align="center"> poly-ominoes </h1>
+<img align="center" width="500" height="575" src="images/polyominoes.png"/>
 
 <h1 align="center"> Usage: </h1>
 
