@@ -12,10 +12,10 @@ cd code
 python3 main.py
 ```
 
-1. You will be prompted for the order of polyomino (N) - this must be an integer value
-2. You will then be asked if you'd like to print all polyominoes of this order (y/N)
+1. You will be prompted for the order of one-sided polyomino (N) - this must be an integer value
+2. You will then be asked if you'd like to print all one-sided polyominoes of this order (y/N)
 
-This will return the number of one-sided poly-ominoes of order N, and then conditionally print them.
+This will return the number of one-sided polyominoes of order N, and then conditionally print them.
 
 <h1 align="center"> Methods </h1>
 
@@ -23,7 +23,7 @@ This will return the number of one-sided poly-ominoes of order N, and then condi
 
 I have decided to use a recursive solution, using the base case of a monomino, which is a single tile. 
 
-Given all one-sided polyominoes of order n - 1, we can construct all one-sided polyominoes of order n. We do this by keeping a unique cache (a set, initialised as empty) of all one-sided polyominoes of order n, and for each polyomino of order n-1, we add a single tile in any free adjacent position to each existing tile. We then rotate this new one-sided polyomino by 90 degrees anti-clockwise and check it against our cache. If it is in the cache, we un-rotate the polyomino and move onto placing a different tile. If it isn't in the cache, we repeat this process until we have rotated it a full 360 degrees. If none of the rotations of this polyomino are in the cache, it is added to the cache. 
+Given all one-sided polyominoes of order n - 1, we can construct all one-sided polyominoes of order n. We do this by keeping a unique cache (a set, initialised as empty) of all one-sided polyominoes of order n, and for each polyomino of order n-1, we add a single tile in any free adjacent position to each existing tile. We then rotate this new one-sided polyomino by 90 degrees anti-clockwise and check it against our cache. If it is in the cache, we un-rotate the polyomino and move onto placing a different tile. If it isn't in the cache, we repeat this process until we have rotated it a full 360 degrees. If none of the rotations of this one-sided polyomino are in the cache, it is added to the cache. 
 
 This is then repeated for each possible free, adjacent tile, for each one-sided polyomino of order n-1. Once we are completed, we re-initialise the cache, and set n = n + 1, using our old cache as our set of one-sided polyominoes of order n - 1.
 
@@ -42,7 +42,7 @@ The combination of rotating 90 degrees anti-clockwise along the y-axis and trans
 
 <h2 align="center"> Memory and speed optimizations </h2>
 
-By using a generator to keep track of all polyominoes of order n - 1 (used to calulate polyominoes of order n) we reduce memory by storing all polyominoes of order 1 -> n-1. Also by keeping a hashset of all current one-sided polyominoes of order n and not caching all possible translations / rotations of any given free-polyomino of order n, we are minimizing memory consumption.
+By using a generator to keep track of all polyominoes of order n - 1 (used to calulate polyominoes of order n) we reduce memory, rather than storing all polyominoes of order 1 -> n-1. Also by keeping a hashset of all current one-sided polyominoes of order n and not caching all possible translations / rotations of any given free-polyomino of order n, we are minimizing memory consumption.
 
 
 We could parallelize this algorithm reasonably easily. By viewing the hashset of polyominoes of order n as a global (shared state / mutex) variable, we could compute all tile placements / rotations / translations given polyominoes of order n-1 in parallel. 
