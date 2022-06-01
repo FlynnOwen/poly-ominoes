@@ -1,6 +1,7 @@
 <h1 align="center"> poly-ominoes </h1>
-<img align="center" width="750" height="250" src="images/polyominoes.png"/>
-
+<p align="center">
+<img width="750" height="250" src="images/polyominoes.png"/>
+</p>
 <h1 align="center"> Usage: </h1>
 
 To run the code: first, clone the repository, move into the code folder, and then run main.py
