@@ -25,7 +25,7 @@ I have decided to use a recursive solution, using the base case of a monomino, w
 
 Given all one-sided polyominoes of order n - 1, we can construct all one-sided polyominoes of order n. We do this by keeping a unique cache (a set, initialised as empty) of all one-sided polyominoes of order n, and for each polyomino of order n-1, we add a single tile in any free adjacent position to each existing tile. We then rotate this new one-sided polyomino by 90 degrees anti-clockwise and check it against our cache. If it is in the cache, we un-rotate the polyomino and move onto placing a different tile. If it isn't in the cache, we repeat this process until we have rotated it a full 360 degrees. If none of the rotations of this one-sided polyomino are in the cache, it is added to the cache. 
 
-This is then repeated for each possible free, adjacent tile, for each one-sided polyomino of order n-1. Once we are completed, we re-initialise the cache, and set n = n + 1, using our old cache as our set of one-sided polyominoes of order n - 1.
+This is then repeated for each possible free, adjacent tile, for each one-sided polyomino of order n-1. Once we are completed, we re-initialise the cache, and set n = n + 1, using our old cache as our set of one-sided polyominoes of order n - 1. This is then repeated until n = N, our desired number to calculate the number of polyominoes for.
 
 
 <h2 align="center"> How this code deals with translation and rotation: </h2>
